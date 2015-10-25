@@ -47,31 +47,28 @@
 </div>
 
 
-				<script>
-				
-$(document).ready(function(){
-	
-	var formObj = $("form[role='form']");
-	
-	console.log(formObj);
-	
-	$(".btn-warning").on("click", function(){
-		formObj.attr("action", "/board/modify");
-		formObj.attr("method", "get");		
-		formObj.submit();
+<script>
+	$(document).ready(function(){
+		
+		var formObj = $("form[role='form']");
+		
+		console.log(formObj);
+		
+		$(".btn-warning").on("click", function(){
+			formObj.attr("action", "/board/modify");
+			formObj.attr("method", "get");		
+			formObj.submit();
+		});
+		
+		$(".btn-danger").on("click", function(){
+			formObj.attr("action", "/board/remove");
+			formObj.submit();
+		});
+		
+		$(".btn-primary").on("click", function(){
+			self.location = "/board/listAll";
+		});
 	});
-	
-	$(".btn-danger").on("click", function(){
-		formObj.attr("action", "/board/remove");
-		formObj.submit();
-	});
-	
-	$(".btn-primary").on("click", function(){
-		self.location = "/board/listAll";
-	});
-	
-});
-
 </script>
 
 
