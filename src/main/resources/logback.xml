@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<include resourc="org/springframework/boot/logging/logback/base.xml">
-	
 	<!-- log4jdbc-log4j2 -->
 	<logger name="jdbc.sqlonly" level="DEBUG">
 		<logger name="jdbc.sqltiming" level="INFO"></logger>
@@ -10,5 +9,5 @@
 		<logger name="jdbc.resultsettable" level="ERROR"></logger>
 		<logger name="jdbc.connection" level="INFO"></logger>
 	</logger>
-
+	</include>
 </configuration>

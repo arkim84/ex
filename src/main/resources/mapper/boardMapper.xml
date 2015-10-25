@@ -4,8 +4,8 @@
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
 	<insert id="create">
-		insert into tbl_board (title, content, wirter)
-		values(#{title}, #{content}, #{wirter})
+		insert into tbl_board (title, content, writer)
+		values(#{title}, #{content}, #{writer})
 	</insert>
 	
 	<select id="read" resultType="org.zerock.domain.BoardVO">

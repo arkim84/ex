@@ -18,12 +18,20 @@ public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Inject
-	private BoardService service;
+	private BoardService boardService;
+	
+	@RequestMapping(value="/register", method=RequestMethod.GET)
+	public void registerGET(BoardVO board, Model model) throws Exception{
+		logger.info("register get...");
+		logger.info("model::" +model.toString());
+
+	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String registerGET(BoardVO board, Model model) throws Exception{
+	public String registerPOST(BoardVO board, Model model) throws Exception{
+		logger.info("register post...");
 		
-		service.regist(board);
+		boardService.regist(board);
 		
 		model.addAttribute("result", "success");
 		
