@@ -17,7 +17,6 @@ public class BoardDAOImpl implements BoardDAO{
 
 	@Override
 	public void create(BoardVO vo) throws Exception {
-		vo.setContent("한글테스트");
 		session.insert(namespace+".create", vo);
 	}
 
