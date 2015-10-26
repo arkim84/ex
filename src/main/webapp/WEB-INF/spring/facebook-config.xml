@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="connectionFactory" class="org.springframework.social.facebook.connect.FacebookConnectionFactory">
+		<constructor-arg value="1467995930164714" />
+		<constructor-arg value="8cfd3c9d89a17c709d4864a3f193eb99" />
+	</bean>
+		
+	<bean id="oAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
+		<property name="scope" value="email"/>
+		<property name="redirectUri" value="http://localhost:8080"/>
+	</bean>
+</beans>

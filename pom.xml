@@ -15,6 +15,12 @@
 	</properties>
 	<dependencies>
 	
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-facebook</artifactId>
+			<version>1.1.1.RELEASE</version>
+		</dependency>
+	
 		<!-- jackson -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
