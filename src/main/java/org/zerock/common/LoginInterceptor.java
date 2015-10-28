@@ -13,6 +13,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	
 		System.out.println("preHandle call..");
 		
+//		FacebookConnector connector = new FacebookConnector();
+//		String url = connector.getAuthUrl();
+//		
+//		System.out.println("url.. "+url);
 		return true;
 	}
 	
