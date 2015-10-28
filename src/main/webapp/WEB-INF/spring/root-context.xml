@@ -33,16 +33,8 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
 		
-<!-- 	<context:component-scan base-package="org.zerock.persistence"></context:component-scan>
+	<context:component-scan base-package="org.zerock.persistence"></context:component-scan>
 	
-	<context:component-scan base-package="org.zerock.service"></context:component-scan> -->
-
-	<mvc:interceptors>
-		<bean id="loginInterceptor" class="org.zerock.common.LoginInterceptor"/>
-		<mvc:interceptor>
-			<mvc:mapping path="/*"/>
-			<bean class="org.zerock.common.LoginInterceptor"/>
-		</mvc:interceptor>
-	</mvc:interceptors>
+	<context:component-scan base-package="org.zerock.service"></context:component-scan>
 			
 </beans>
