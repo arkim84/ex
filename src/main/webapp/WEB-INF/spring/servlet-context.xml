@@ -46,6 +46,7 @@
 		</interceptor>
 	</interceptors>
 	
+	<beans:bean id="producer" class="org.zerock.mq.Producer"></beans:bean>
 	
 	<!-- RabbitMQ 연결 설정 -->
 	<rabbit:connection-factory id="rabbitConnectionFactory" host="127.0.0.1" port="5672" username="guest" password="guest"/>
