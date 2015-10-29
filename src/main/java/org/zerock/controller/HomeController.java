@@ -37,15 +37,11 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
+		producer.sendMessage("스프링 로딩 시 전송 테스트");
+		
 		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
-	}
 
-	@RequestMapping(value="/send/{msg}", method = RequestMethod.POST)
-	public void sendTest(@PathVariable String msg) throws Exception{
-		
-		producer.sendMessage(msg);
+		return "home";
 	}
 	
 }
