@@ -1,6 +1,10 @@
 package org.zerock.aop;
 
+import java.util.Arrays;
+
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -17,7 +21,21 @@ public class SampleAdvice {
 	public void startLog(JoinPoint jp){
 		
 		logger.info("advice call..");
-		logger.info("joinpoint "+jp.getArgs());
+		logger.info(Arrays.toString(jp.getArgs()));
+	}
+	
+	@Around("execution(* org.zerock.service.MessageService*.*(..))")
+	public Object timeLog(ProceedingJoinPoint pjp) throws Throwable {
+	
+		long startTime = System.currentTimeMillis();
+		logger.info(Arrays.toString(pjp.getArgs()));
+		
+		Object result = pjp.proceed();
+		
+		long endTime = System.currentTimeMillis();
+		logger.info(pjp.getSignature().getName() + ":" + (endTime-startTime));
+		
+		return result;
 	}
 
 }
