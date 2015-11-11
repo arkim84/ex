@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.zerock.mapper.BoardMapper">
+<mapper namespace="org.zerock.mapper.MessageMapper">
 
-	<insert id="create">
+	<insert id="create" parameterType="map">
 		insert into tbl_message (targetid, sender, message)
 		values(#{targetid}, #{sender}, #{message})
 	</insert>
@@ -17,7 +17,7 @@
 			mid = #{mid}
 	</select>
 	
-	<update id="updateState">
+	<update id="updateState" parameterType="map">
 		update tbl_message set 
 			opendate = now() 
 		where

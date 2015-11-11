@@ -21,8 +21,8 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@Autowired
-	private Producer producer;
+	/*@Autowired
+	private Producer producer;*/
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -36,7 +36,7 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		producer.sendMessage("스프링 로딩 시 전송 테스트");
+//		producer.sendMessage("스프링 로딩 시 전송 테스트");
 		
 		model.addAttribute("serverTime", formattedDate );
 

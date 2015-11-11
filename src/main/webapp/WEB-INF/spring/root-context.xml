@@ -16,9 +16,13 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
     
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    
+    <tx:annotation-driven />
+    
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://ami.cmtxwaratffd.ap-northeast-1.rds.amazonaws.com/blog"></property>
+		<property name="url" value="jdbc:mysql://ami.cmtxwaratffd.ap-northeast-1.rds.amazonaws.com/AMI"></property>
 		<property name="username" value="arkim84"></property>
 		<property name="password" value="kimarem23"></property>
 	</bean>
@@ -33,15 +37,16 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
 	
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 서비스, DAO등 로직에 관련된 컴포넌트 스캔 -->
 	<context:component-scan base-package="org.zerock.persistence"></context:component-scan>
-	
 	<context:component-scan base-package="org.zerock.service"></context:component-scan>
-	
 	<context:component-scan base-package="org.zerock.aop"></context:component-scan>
 	
-	<!-- 자동으로 AspectJ 라이브러리를 이용해서 Proxy 객체를 생성해 낸다 -->
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-	
 	<aop:config></aop:config>
-			
+	
 </beans>
