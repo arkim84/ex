@@ -25,11 +25,11 @@ public class MessageController {
 		
 		try{
 			messageService.addMessage(vo);
-			entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 
 		}catch(Exception e){
 			e.printStackTrace();
-			entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		
 		return entity;
