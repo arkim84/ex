@@ -6,14 +6,14 @@
 	xmlns:social="http://www.springframework.org/schema/social"
 	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
 	xmlns:util="http://www.springframework.org/schema/util"
-	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd
 		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
 		http://www.springframework.org/schema/social http://www.springframework.org/schema/social/spring-social-1.1.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 
