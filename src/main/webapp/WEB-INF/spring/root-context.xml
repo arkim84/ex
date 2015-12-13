@@ -62,5 +62,12 @@
 	
 	<task:executor id="asyncExecutor" pool-size="100-1000" queue-capacity="1000"  rejection-policy="ABORT" />
  	<task:annotation-driven executor="asyncExecutor" />
+ 	
+ 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<constructor-arg>
+			<bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory" />
+		</constructor-arg>
+		<property name="messageConverters" ref="httpMessageConverters" />
+	</bean>
 	
 </beans>

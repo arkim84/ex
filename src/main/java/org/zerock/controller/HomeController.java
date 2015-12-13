@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.zerock.mq.Producer;
 import org.zerock.service.AsyncService;
+import org.zerock.service.QQAuthService;
 
 /**
  * Handles requests for the application home page.
@@ -28,6 +29,9 @@ public class HomeController {
 	
 	@Autowired
 	private AsyncService asyncService;
+	
+	@Autowired
+	private QQAuthService qQAuthService;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -44,6 +48,8 @@ public class HomeController {
 //		producer.sendMessage("스프링 로딩 시 전송 테스트");
 		
 		model.addAttribute("serverTime", formattedDate );
+		
+		qQAuthService.getUserInfo();
 
 		return "home";
 	}
